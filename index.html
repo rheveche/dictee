@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fondation Croix Saint Simon</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docx@7.7.0/build/index.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1>Fondation de la croix Saint Simon</h1>
+        <h2>Prise de dictée d'une réunion</h2>
+    </header>
+
+    <div class="container">
+        <section class="participants-section">
+            <h3>⨠ Participants</h3>
+            <div class="input-group">
+                <input type="text" id="nom" placeholder="Nom" class="input-field">
+                <input type="email" id="email" placeholder="Email" class="input-field">
+                <button onclick="ajouterParticipant()" class="add-btn">Ajouter</button>
+            </div>
+            <div id="listeParticipants" class="participants-list"></div>
+        </section>
+
+        <div class="controls">
+            <button id="btnStart" class="control-btn green" onclick="startMeeting()">▶ Démarrer</button>
+            <button id="btnStop" class="control-btn red" onclick="stopMeeting()" disabled>⏹ Arrêter</button>
+        </div>
+
+        <textarea id="dictation" placeholder="La transcription apparaîtra ici..." disabled></textarea>
+
+        <div id="exportButtons" class="hidden">
+            <button onclick="exportTXT()" class="export-btn">📄 TXT</button>
+            <button onclick="exportDOC()" class="export-btn">📑 DOC</button>
+            <button onclick="exportPDF()" class="export-btn">📊 PDF</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
