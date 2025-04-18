@@ -1,16 +1,23 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "dictée/api/summarize.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "dictée/index.html",
+      "use": "@vercel/static"
+    }
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/$1.js"
-    },
-    {
-      "handle": "filesystem"
+      "dest": "dictée/api/$1.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "dictée/index.html"
     }
   ]
 }
