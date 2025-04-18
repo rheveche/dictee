@@ -1,4 +1,4 @@
-export const config = { runtime: 'edge' };
+export const config = { runtime: 'nodejs14.x' };
 
 export default async function handler(req) {
   if (req.method !== 'POST') {
@@ -13,9 +13,8 @@ export default async function handler(req) {
   const openaiApiKey = process.env.OPENAI_API_KEY;
   const endpoint = 'https://api.openai.com/v1/chat/completions';
 
-  // Construire la requête pour OpenAI
   const requestBody = {
-    model: 'gpt-4o-mini', // Vous pouvez changer cela selon le modèle que vous utilisez
+    model: 'gpt-4o-mini',
     temperature: 0.3,
     messages: [
       { role: 'system', content: 'Vous êtes un assistant qui synthétise des réunions de façon claire, structurée et actionable.' },
