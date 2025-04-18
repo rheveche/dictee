@@ -2,22 +2,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "dictee/api/summarize.js",
+      "src": "api/summarize.js",
       "use": "@vercel/node"
     },
     {
-      "src": "dictee/index.html",
+      "src": "index.html",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "dictee/api/$1.js"
+      "dest": "api/$1.js"
     },
     {
       "src": "/(.*)",
-      "dest": "dictee/index.html"
+      "dest": "/index.html"
     }
   ]
 }
